@@ -4,22 +4,11 @@ h1
   table.table.table-bordered.table-hover
     thead
     tr
-      th 名前
-      th Email
-      th 年齢
-      th 性別
-      th 学校名
+      th 面接日程
     tbody
-      - current_user.interviews.each do |interview|
+      /- binding.pry
+      - current_user.interviews.each do |i|
         tr
           td 
-            = interview.interview-shedule
-          td
-            = user.email
-          td
-            = user.age 
-          td
-            = user.gender 
-          td
-            = user.school
+            = i.interview_schedule
             
