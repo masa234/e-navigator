@@ -17,11 +17,10 @@ ActiveRecord::Schema.define(version: 20180126015555) do
 
   create_table "interviews", force: :cascade do |t|
     t.bigint "user_id"
-    t.date "schedule"
+    t.time "schedule"
     t.boolean "propriety"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "schedule"], name: "index_interviews_on_user_id_and_schedule", unique: true
     t.index ["user_id"], name: "index_interviews_on_user_id"
   end
 
