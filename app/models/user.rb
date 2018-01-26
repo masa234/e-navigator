@@ -1,16 +1,17 @@
 class User < ApplicationRecord
   before_save { self.email.downcase! }
   validates :name, presence: true,  length: { maximum: 50 }
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: true
-  has_secure_password(validations: false) # varidation 無効化
   has_secure_password(validations: false) # bcryptをvaridation 無効化
   # 通常のログインの時、６文字以上のバリデーションを付与する
   validates :password, presence: true, length: { minimum: 6 }, confirmation: true, allow_nil: true, if: :password_required?
   
   enum gender: %i( man woman )
+  
+  has_many :interviews
   
   
   def age

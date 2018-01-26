@@ -5,4 +5,4 @@ module UsersHelper
     size = options[:size] # サイズを引数のサイズに変更
     "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}&d=mm"
   end
-end
+end 
