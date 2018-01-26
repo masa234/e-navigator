@@ -1,2 +1,5 @@
-h1 Interviews#new
-p Find me in app/views/interviews/new.html.slim
+h1  新規面接作成
+/ このformの書き方が最初、よくわかりませんでした。
+= bootstrap_form_for [current_user,  @interview]  do |f| 
+  = f.date_field :interview_schedule, label: "面接日程", placeholder: '面接日程をここに入力してくださいませ'
+  = f.submit '面接を作成する', class: 'btn btn-success btn-block text-right'   
