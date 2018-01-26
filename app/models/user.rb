@@ -12,6 +12,7 @@ class User < ApplicationRecord
   
   enum gender: %i( man woman )
   
+  has_many :interviews
   
   def age
     return nil unless birth_of_date # 生年月日が空ならnilを返却

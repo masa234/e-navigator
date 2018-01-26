@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'toppages#root' 
-  resources :users
+  resources :users do
+    resources :interviews
+  end
   
   get 'auth/:provider/callback', to: 'sessions#callback' # Oauth
   

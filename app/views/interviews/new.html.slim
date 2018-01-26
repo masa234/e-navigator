@@ -1,0 +1,4 @@
+h1  新規面接作成
+= bootstrap_form_for [current_user,  @interview]  do |f| 
+  = f.date_field :schedule, label: "面接日程", placeholder: '面接日程をここに入力してくださいませ'
+  = f.submit '面接を作成する', class: 'btn btn-success btn-block text-right'   

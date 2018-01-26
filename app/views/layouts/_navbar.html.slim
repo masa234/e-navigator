@@ -21,6 +21,8 @@ header
                   span.caret
             li
               = link_to 'ログアウト', logout_path , method: :delete
+            li
+              = link_to '自分の面接一覧', user_interviews_path(current_user)
           -else
             li
               = link_to 'ログイン', login_path
