@@ -11,7 +11,6 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, confirmation: true, allow_nil: true, if: :password_required?
   
   enum gender: %i( man woman )
-  
   has_many :interviews
   
   def age
