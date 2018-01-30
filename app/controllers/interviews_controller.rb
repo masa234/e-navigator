@@ -1,4 +1,6 @@
 class InterviewsController < ApplicationController
+  before_action :require_sign_in
+  
   def new
     @interview = Interview.new
   end
@@ -15,6 +17,7 @@ class InterviewsController < ApplicationController
   end
 
   def index
+    @user = User.find(params[:user_id])
   end
   
   private

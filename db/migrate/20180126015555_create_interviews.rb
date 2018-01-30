@@ -4,7 +4,6 @@ class CreateInterviews < ActiveRecord::Migration[5.1]
       t.references :user, foreign_key: true
       t.datetime :schedule # datetime 
       t.boolean :propriety
-
       
       t.timestamps
     end

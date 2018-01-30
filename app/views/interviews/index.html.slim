@@ -1,5 +1,6 @@
 h1 
-  |自分の面接一覧
+  = @user.name
+  |さんの面接一覧
   =link_to "新規面接" ,new_user_interview_path
   table.table.table-bordered.table-hover
     thead
@@ -7,7 +8,7 @@ h1
       th 面接日程
     tbody
       /- binding.pry
-      - current_user.interviews.each do |interview|
+      -  @user.interviews.each do |interview|
         tr
           td 
             = interview.schedule
