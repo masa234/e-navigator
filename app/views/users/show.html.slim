@@ -1,0 +1,23 @@
+.text-center
+  img class="gravatar img-circle" alt="" src="#{gravatar_url(current_user, size:120)}"
+  .user-name
+    = @user.name
+    | さんのプロフィール
+.panel-info.panel
+  .panel-heading
+    | 詳細情報
+  .panel-body.user-profile-panel-info
+    .email
+    | email:
+    = @user.email
+    .age
+    | age:
+    = @user.age 
+    .gender 
+    | gender:
+    = @user.gender 
+    .school 
+    | school:
+    = @user.school 
+
+
