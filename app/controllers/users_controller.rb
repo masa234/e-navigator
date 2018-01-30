@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update]
   before_action :check_user, only: [:edit, :update]
   
+  
+  
   def create
     @user = User.new(user_params)
     if @user.save

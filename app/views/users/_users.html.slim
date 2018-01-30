@@ -1,6 +1,6 @@
 -if users.any?
   .container
-    table.table.table-bordered.table-hover
+    table.table.table-bordered.table-hover.text-center
       thead
         tr
           th 名前
@@ -8,12 +8,13 @@
           th 年齢
           th 性別
           th 学校名
+          th
+          th
       tbody
         - @users.each do |user|
           tr
             td 
               = user.name
-              = link_to "編集する", edit_user_path(user) if current_user == user
             td
               = user.email
             td
@@ -22,4 +23,10 @@
               = user.gender 
             td
               = user.school
-              
+            td
+              = link_to "面接一覧", user_interviews_path(user) , class: "btn btn-primary"
+            td
+              - if current_user == user
+                = link_to "編集する", edit_user_path(user), class: "btn btn-success" 
+              -else 
+                = link_to "プロフィールを閲覧する", user_interview_path(user), class: "btn btn-success" 
