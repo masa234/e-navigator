@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20180126015555) do
 
   create_table "interviews", force: :cascade do |t|
     t.bigint "user_id"
-    t.time "schedule"
+    t.datetime "schedule"
     t.boolean "propriety"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
