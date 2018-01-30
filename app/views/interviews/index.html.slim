@@ -1,15 +1,21 @@
-h1 
+h1.new-interview
   = @user.name
   |さんの面接一覧
-  =link_to "新規面接" ,new_user_interview_path
-  table.table.table-bordered.table-hover
-    thead
-    tr
-      th 面接日程
-    tbody
-      /- binding.pry
-      -  @user.interviews.each do |interview|
-        tr
-          td 
-            = interview.schedule
+  -if @user.interviews.any?
+    table.table.table-bordered.table-hover
+      thead
+      tr.info.interview-tr
+        th 面接日程
+      tbody
+        /- binding.pry
+        -  @user.interviews.each do |interview|
+          tr
+            td 
+              = interview.schedule
+  -else 
+    h2
+    | まだ面接はありません
+  =link_to "新規面接" ,new_user_interview_path , class: "btn btn-primary  btn-block new-interview-btn"
             
+
+

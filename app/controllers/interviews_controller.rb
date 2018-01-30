@@ -11,7 +11,7 @@ class InterviewsController < ApplicationController
       swal{ success '新規面接の作成に成功しました' }
       redirect_to user_interviews_path(current_user)
     else 
-      swal{ success '申し訳ございません 作成できませんでした' }
+      # swal{ success '申し訳ございません 作成できませんでした' }
       render :new
     end
   end
