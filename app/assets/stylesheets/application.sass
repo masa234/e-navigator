@@ -16,14 +16,55 @@
  *= require rails_bootstrap_forms
  */
  
+body
+    font-weight: bold
+ 
 .btn-github
     background-color: #24292e
     color: white
 
-.btn-github:hover
+.btn-github:hover //hover 
     color: white
     -webkit-transform: scale(1.05,1.05)
     -moz-transform: scale(1.05,1.05)
     -o-transform: scale(1.05,1.05)
     -ms-transform: scale(1.05,1.05)
     transform: scale(1.05,1.05)
+  
+// ユーザプロフィールページのデザイン  
+//↓クラス名適切じゃないかもしれません
+.user-name 
+    margin: 10px
+    color: gray
+
+.panel
+    margin: 20px
+    padding: 0px
+    
+.user-profile-panel-inner    
+    font-size: 30px
+    
+
+// tableのbootstrapデザインを上書き
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th 
+    padding: 25px
+    line-height: 1.42857143
+    vertical-align: middle
+    border-top: 1px solid #ddd
+    font-size: 20px
+    
+.interview-tr
+    margin-top: 20px
+
+.new-interview-btn
+    margin-top: 30px
+    
+    
+
+    
+    
+    
+    
+    
+    
+    

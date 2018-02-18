@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
   before_action :require_sign_in, except: [:create] # ログインフィルター
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :show]
   before_action :check_user, only: [:edit, :update]
   
+  def show 
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save

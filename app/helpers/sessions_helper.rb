@@ -1,6 +1,6 @@
 module SessionsHelper
   def sign_in?
-    !!session[:user_id] # ログインしていればtrue
+    !!current_user
   end
   
   def current_user
